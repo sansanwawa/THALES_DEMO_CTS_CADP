@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thales CDSP - CipherTrust Data Security Platform</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+
+<body>
+<div class="row">
+    <div class="col-75">
+        <div class="container">
+            <img th:src="@{/images/Thales-logo.png}" class="logo">
+
+            <form method="POST" action="/cts-config">
+                <input type="submit" value="CTS" class="btn_checkout">
+            </form>
+            <form method="POST" action="/cadp-config">
+                <input type="submit" value="CADP" class="btn_checkout">
+            </form>
+
+
+            <b style="color:black;"> NOTE: For Demonstration Purpose Only</b>
+            <br>
+
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thales CTS Demo</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+
+<body>
+
+<a th:href="@{/cts/form/demo}">
+    <img th:src="@{/images/Thales-logo.png}" class="logo">
+</a>
+<H2 align=center>View Detokenize Data</H2>
+<table>
+    <thead>
+    <tr>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th>Name on Card</th>
+        <th>Credit Card Number</th>
+        <th>Expiration Date</th>
+        <th>CVV</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td><p th:text="${person.name}" /></td>
+        <td><p th:text="${person.email}" /></td>
+        <td><p th:text="${person.address}" /></td>
+        <td><p th:text="${person.city}" /></td>
+        <td><p th:text="${person.state}" /></td>
+        <td><p th:text="${person.zip}" /></td>
+        <td><p th:text="${person.cardName}" /></td>
+        <td><p th:text="${person.cardNumber}" /></td>
+        <td><p th:text="${person.expDate}" /></td>
+        <td><p th:text="${person.cvv}" /></td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>

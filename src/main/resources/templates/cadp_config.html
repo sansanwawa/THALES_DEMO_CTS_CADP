@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thales CADP Demo</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+
+<body>
+<div class="row">
+    <div class="col-75">
+        <div class="container">
+            <form method="POST" action="/save/cadp/config">
+                <a th:href="@{/}">
+                    <img th:src="@{/images/Thales-logo.png}" class="logo">
+                </a>
+
+                <b style="color:red;"> All Fields are required</b>
+                <div class="row">
+                    <div class="col-50">
+
+                        <h3>Basic CADP Setup</h3>
+
+
+                        <div class="row">
+                            <div class="col-50">
+                                <label for="email">Username</label>
+                                <input type="text" name="cadpUsername" th:attr="placeholder=${configrequest.cadpUsername}" th:value="${configrequest.cadpUsername}" required>
+                            </div>
+                            <div class="col-50">
+                                <label for="adr">Password</label>
+                                <input type="text" name="cadpPassword" th:attr="placeholder=${configrequest.cadpPassword}" th:value="${configrequest.cadpPassword}" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-50">
+                                <label for="email">NAE IP</label>
+                                <input type="text" name="cadpNAEIP" th:attr="placeholder=${configrequest.cadpNAEIP}" th:value="${configrequest.cadpNAEIP}" pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" required>
+                            </div>
+                            <div class="col-50">
+                                <label for="adr">NAE Port</label>
+                                <input type="text" name="cadpNAEPort" th:attr="placeholder=${configrequest.cadpNAEPort}" th:value="${configrequest.cadpNAEPort}" pattern="[0-9]+" required>
+                            </div>
+                        </div>
+
+
+
+
+                        <label for="city">Key Name</label>
+                        <input type="text" name="cadpKeyName" th:attr="placeholder=${configrequest.cadpKeyName}" th:value="${configrequest.cadpKeyName}" required>
+
+                        <label for="city">Algorithm</label>
+                        <input type="text" name="cadpAlgorithm" th:attr="placeholder=${configrequest.cadpAlgorithm}" th:value="${configrequest.cadpAlgorithm}" required readonly>
+
+
+                        <!--
+                                                <label for="city">Protocol</label>
+                                                <input type="text" name="cadpNAEProtokol" th:attr="placeholder=${configrequest.cadpNAEProtokol}" th:value="${configrequest.cadpNAEProtokol}" required disabled>
+
+                                                <label for="city">Verify SSL</label>
+                                                <input type="text" name="cadpVerifySSL" th:attr="placeholder=${configrequest.cadpVerifySSL}" th:value="${configrequest.cadpVerifySSL}" required>
+
+                                                <label for="city">Load Balancing Algorithm</label>
+
+                                                <select name="cadpLoadBalancingAlg">
+                                                        <option value="round-robin">Round Robin</option>
+                                                        <option value="random">Random</option>
+                                                </select>
+                        <input type="text" name="cadpLoadBalancingAlg" th:attr="placeholder=${configrequest.cadpLoadBalancingAlg}" th:value="${configrequest.cadpLoadBalancingAlg}" required>
+                           -->
+
+
+
+                    </div>
+
+
+
+                </div>
+
+                <input type="submit" value="Save" class="btn_checkout">
+
+            </form>
+
+
+
+
+            <b style="color:black;"> NOTE: For Demonstration Purpose Only</b>
+            <br>
+
+            <a th:href="@{/cadp/form/demo}"><p style="color:black;">Start Demo</p></a>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

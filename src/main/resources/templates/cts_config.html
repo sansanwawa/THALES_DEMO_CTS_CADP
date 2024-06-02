@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thales CTS Demo</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+
+<body>
+<div class="row">
+    <div class="col-75">
+        <div class="container">
+            <form method="POST" action="/save/cts/config">
+
+                <a th:href="@{/}">
+                    <img th:src="@{/images/Thales-logo.png}" class="logo">
+                </a>
+
+                <b style="color:red;"> All Fields are required</b>
+                <div class="row">
+                    <div class="col-50">
+
+                        <h3>Basic CTS Setup</h3>
+
+                        <div class="row">
+                            <div class="col-50">
+                                <label for="state">Username</label>
+                                <input type="text" name="ctsUsername" th:attr="placeholder=${configrequest.ctsUsername}" th:value="${configrequest.ctsUsername}" required>
+                            </div>
+                            <div class="col-50">
+                                <label for="zip">Password</label>
+                                <input type="text" name="ctsPassword" th:attr="placeholder=${configrequest.ctsPassword}" th:value="${configrequest.ctsPassword}" required>
+                            </div>
+                        </div>
+
+
+                        <label for="email">Tokenize Url</label>
+                        <input type="text" name="ctsTokenizeUrl" th:attr="placeholder=${configrequest.ctsTokenizeUrl}" th:value="${configrequest.ctsTokenizeUrl}" rpattern="https://.*" equired>
+                        <label for="adr">DeTokenize Url</label>
+                        <input type="text" name="ctsDeTokenizeUrl" th:attr="placeholder=${configrequest.ctsDeTokenizeUrl}" th:value="${configrequest.ctsDeTokenizeUrl}" pattern="https://.*" required>
+
+                        <label for="city">Token Template</label>
+                        <input type="text" name="ctsTokenTemplate" th:attr="placeholder=${configrequest.ctsTokenTemplate}" th:value="${configrequest.ctsTokenTemplate}" required>
+
+                        <label for="city">Token Group</label>
+                        <input type="text" name="ctsTokenGroup" th:attr="placeholder=${configrequest.ctsTokenGroup}" th:value="${configrequest.ctsTokenGroup}" required>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+                <input type="submit" value="Save" class="btn_checkout">
+
+            </form>
+
+
+
+
+            <b style="color:black;"> NOTE: For Demonstration Purpose Only</b>
+            <br>
+
+            <a th:href="@{/cts/form/demo}"><p style="color:black;">Start Demo</p></a>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

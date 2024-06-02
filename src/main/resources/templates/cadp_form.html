@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thales CADP Demo</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+
+<body>
+<div class="row">
+    <div class="col-75">
+        <div class="container">
+            <form method="POST" action="/cadp/encrypt">
+                <a th:href="@{/}">
+                    <img th:src="@{/images/Thales-logo.png}" class="logo">
+                </a>
+
+                <div class="row">
+                    <div class="col-50">
+                        <h3>Encryption Operation</h3>
+                        <label for="plainValue"></label>
+                        <input type="text" name="plainValue" placeholder="Please input your text to be encrypt" required>
+
+                        <h3>Result</h3>
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Plain Text</th>
+                                <th scope="col">Encrypted</th>
+                                <th scope="col">Key</th>
+                                <th scope="col">Algorithm</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Password</th>
+
+
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td th:text="${theresult?.plainValue}"></td>
+                                <td><a th:href="@{/cadp/decrypt/{text}(text=${theresult?.convertedValue})}" th:text="${theresult?.convertedValue}" target="_blank"></a></td>
+                                <td th:text="${key}"></td>
+                                <td th:text="${algo}"></td>
+                                <td th:text="${username}"></td>
+                                <td th:text="${password}"></td>
+
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+
+
+
+                    </div>
+
+
+
+                </div>
+                <br>
+                <br>
+
+                <input type="submit" value="Submit" class="btn_checkout">
+            </form>
+
+
+
+
+            <b style="color:black;">NOTE: For Demo Purpose Only</b>
+            <!--
+            <br>
+            <p style="color:black;"> MySQL Edition</p>
+            -->
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

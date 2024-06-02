@@ -1,0 +1,10 @@
+#!/bin/bash
+filename=run.pid
+filenameNoHup=nohup.out
+pid="`cat $filename`"
+echo "Stoping PID" $pid "Please wait....."
+kill -9 $pid
+sleep 5
+rm -rf $filename
+rm -rf $filenameNoHup
+echo "Stopped!"

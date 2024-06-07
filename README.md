@@ -2,7 +2,7 @@
 
 This is a simple demo app for CTS and CADP.
 
-How to populate in your IDE (IntelliJ) :
+How to populate in your IDE (IntelliJ - https://www.jetbrains.com/idea/download/) :
 
 1. Create the project 
 2. Copy manually in your workspace
